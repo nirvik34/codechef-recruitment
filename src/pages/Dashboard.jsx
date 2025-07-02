@@ -20,6 +20,12 @@ const dashboardClubs = [
   { name: "AUTOVIT", category: "Technical", president: "Bob White", faculty: "Dr. Kim" },
   { name: "BIONARY CLUB", category: "Technical", president: "Charlie Black", faculty: "Dr. Green" },
   { name: "BUSINESS INNOVATION COMMUNITY (BiC)", category: "Technical", president: "David Grey", faculty: "Dr. Adams" },
+  { name: "CAD CLUB", category: "Technical", president: "Eve Blue", faculty: "Dr. Clark" },
+  { name: "CIVITEK", category: "Technical", president: "Frank Red", faculty: "Dr. Lewis" },
+  { name: "CLOUD COMPUTING CLUB", category: "Technical", president: "Grace Pink", faculty: "Dr. Walker" },
+  { name: "CODE Y-GEN", category: "Technical", president: "Hank Gold", faculty: "Dr. Hall" },
+  { name: "CODECHEF – VIT", category: "Technical", president: "Ivy Silver", faculty: "Dr. Young" },
+  { name: "CYSCOM", category: "Technical", president: "Jack Brown", faculty: "Dr. King" },
   // Cultural
   { name: "CITAAA STUDENT CHAPTER", category: "Cultural", president: "John Doe", faculty: "Dr. Smith" },
   { name: "ENACTUS VIT CHENNAI", category: "Cultural", president: "Jane Doe", faculty: "Dr. Johnson" },
@@ -27,6 +33,12 @@ const dashboardClubs = [
   { name: "HEALTH CLUB", category: "Cultural", president: "Bob White", faculty: "Dr. Kim" },
   { name: "NATIONAL SERVICE SCHEME (NSS)", category: "Cultural", president: "Charlie Black", faculty: "Dr. Green" },
   { name: "NEXSEED", category: "Cultural", president: "David Grey", faculty: "Dr. Adams" },
+  { name: "RED RIBBON CLUB", category: "Cultural", president: "Eve Blue", faculty: "Dr. Clark" },
+  { name: "ROTARACT CLUB", category: "Cultural", president: "Frank Red", faculty: "Dr. Lewis" },
+  { name: "SAHAYATHA", category: "Cultural", president: "Grace Pink", faculty: "Dr. Walker" },
+  { name: "SERAPHIC STUDENT CHAPTER", category: "Cultural", president: "Hank Gold", faculty: "Dr. Hall" },
+  { name: "THE WHITE HELMETS", category: "Cultural", president: "Ivy Silver", faculty: "Dr. Young" },
+  { name: "UDDESHYA", category: "Cultural", president: "Jack Brown", faculty: "Dr. King" },
 ];
 
 const Dashboard = () => {
@@ -153,13 +165,13 @@ const Dashboard = () => {
           </div>
           {/* Clubs Overview */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-            {dashboardClubs.map((club, idx) => (
+            {filteredClubs.map((club, idx) => (
               <div key={idx} className="bg-white/70 backdrop-blur-lg border border-white/40 rounded-3xl shadow-xl p-8 flex flex-col gap-3 min-w-0 hover:scale-[1.025] hover:shadow-2xl transition-all duration-200 cursor-pointer">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-2">
                   <div className="text-2xl font-extrabold text-gray-800 break-words drop-shadow-sm">{club.name}</div>
                   <div className="flex gap-2 flex-wrap">
-                    <button className="text-blue-500 hover:underline text-xs font-semibold">Edit</button>
-                    <button className="text-red-500 hover:underline text-xs font-semibold">Delete</button>
+                    <button className="text-blue-500 hover:underline text-xs font-semibold" onClick={() => openEdit(clubs.indexOf(club))}>Edit</button>
+                    <button className="text-red-500 hover:underline text-xs font-semibold" onClick={() => openDelete(clubs.indexOf(club))}>Delete</button>
                   </div>
                 </div>
                 <div className="text-gray-600 text-base mb-1 break-words font-medium">{club.description}</div>
@@ -169,8 +181,8 @@ const Dashboard = () => {
                   <span className="bg-teal-100 px-2 py-1 rounded-full">Faculty: {club.faculty}</span>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <button className="text-blue-600 text-xs hover:underline font-semibold">Manage Members</button>
-                  <button className="text-green-600 text-xs hover:underline font-semibold">Assign Roles</button>
+                  <button className="text-blue-600 text-xs hover:underline font-semibold" onClick={() => openManage(clubs.indexOf(club))}>Manage Members</button>
+                  <button className="text-green-600 text-xs hover:underline font-semibold" onClick={() => openRole(clubs.indexOf(club))}>Assign Roles</button>
                 </div>
               </div>
             ))}
