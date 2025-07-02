@@ -137,7 +137,7 @@ const Dashboard = () => {
             <div>
               <h1 className="text-5xl font-extrabold text-gray-800 mb-2 drop-shadow-lg tracking-tight">Dashboard</h1>
               <div className="h-1 w-24 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300 rounded-full mb-2"></div>
-              <div className="text-gray-400 text-sm font-medium">Jun 1 - Aug 31, 2024</div>
+              <div className="text-gray-400 text-sm font-medium">Jun 1 - Aug 31, 2025</div>
             </div>
             <div className="flex gap-4 items-center bg-white/70 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
               <input
