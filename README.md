@@ -1,12 +1,72 @@
-# React + Vite
+# CIMP Admin Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based admin portal for managing technical and cultural clubs at CIMP.
 
-Currently, two official plugins are available:
+## Features
+- View lists of technical and cultural clubs
+- Expandable club details with president and faculty info
+- Responsive, modern UI with Tailwind CSS
+- Sidebar navigation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React (Vite)
+- Tailwind CSS
+- React Icons
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone <your-repo-url>
+   cd cimp-admin-portal
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+### Running the App
+Start the development server:
+```sh
+npm run dev
+# or
+yarn dev
+```
+The app will be available at `http://localhost:5173` by default.
+
+### Building for Production
+```sh
+npm run build
+# or
+yarn build
+```
+
+### Linting
+```sh
+npm run lint
+# or
+yarn lint
+```
+
+## Folder Structure
+```
+src/
+  components/      # Reusable UI components
+  context/         # React context providers
+  pages/           # Main page components (Clubs, Dashboard, etc.)
+  routes/          # App route definitions
+  assets/          # Static assets
+  App.jsx          # Main app component
+  main.jsx         # Entry point
+```
+
+## Customization
+- To add or edit clubs, modify the arrays in `src/pages/Clubs.jsx`.
+- Tailwind CSS classes can be adjusted for custom theming.
