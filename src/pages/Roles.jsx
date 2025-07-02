@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 
@@ -37,19 +37,6 @@ const Roles = () => {
   const [search, setSearch] = useState("");
   const [club, setClub] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    // Persist dark mode in localStorage
-    return localStorage.getItem("darkMode") === "true";
-  });
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -60,14 +47,12 @@ const Roles = () => {
   };
 
   return (
-    <div className={"flex min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"}>
+    <div className="flex min-h-screen bg-white">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex-1">
         <Topbar
           className="ml-0 lg:ml-64"
           onMenuClick={() => setSidebarOpen(true)}
-          darkMode={darkMode}
-          onThemeToggle={() => setDarkMode((d) => !d)}
         />
         <main className="p-2 sm:p-4 md:p-8 lg:ml-64">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 md:mb-10 gap-4">

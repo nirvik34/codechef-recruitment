@@ -1,7 +1,7 @@
 import React from "react";
-import { FiBell, FiSun, FiMoon, FiMenu } from "react-icons/fi";
+import { FiBell, FiMenu } from "react-icons/fi";
 
-const Topbar = ({ onThemeToggle, darkMode, onMenuClick }) => {
+const Topbar = ({ onMenuClick }) => {
   return (
     <header className="sticky top-0 z-30 w-full flex items-center justify-between bg-white/80 backdrop-blur-lg shadow-md pl-4 pr-8 py-4">
       <div className="flex items-center">
@@ -19,13 +19,6 @@ const Topbar = ({ onThemeToggle, darkMode, onMenuClick }) => {
       <div className="flex items-center gap-6">
         <button className="text-gray-500 hover:text-blue-600 transition text-xl" title="Notifications">
           <FiBell />
-        </button>
-        <button
-          className="text-gray-500 hover:text-blue-600 transition text-xl"
-          onClick={onThemeToggle}
-          title="Toggle theme"
-        >
-          {darkMode ? <FiSun /> : <FiMoon />}
         </button>
         <div className="flex items-center gap-2">
           <div className="w-9 h-9 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-700">A</div>
