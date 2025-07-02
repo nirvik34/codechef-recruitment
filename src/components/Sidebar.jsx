@@ -17,7 +17,7 @@ const Sidebar = () => {
 			<div>
 				<div className="flex items-center gap-2 px-4 py-4">
 					<span className="text-2xl font-extrabold text-blue-600 tracking-tight">
-						CIMP
+						CCR
 					</span>
 				</div>
 				<nav className="flex flex-col gap-1 mt-2 px-1">
