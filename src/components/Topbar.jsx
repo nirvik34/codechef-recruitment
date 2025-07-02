@@ -1,10 +1,21 @@
 import React from "react";
-import { FiBell, FiSun, FiMoon } from "react-icons/fi";
+import { FiBell, FiSun, FiMoon, FiMenu } from "react-icons/fi";
 
-const Topbar = ({ onThemeToggle, darkMode }) => {
+const Topbar = ({ onThemeToggle, darkMode, onMenuClick }) => {
   return (
     <header className="sticky top-0 z-30 w-full flex items-center justify-between bg-white/80 backdrop-blur-lg shadow-md pl-4 pr-8 py-4">
-      <div />
+      <div className="flex items-center">
+        {/* Hamburger for mobile */}
+        {onMenuClick && (
+          <button
+            className="text-gray-500 hover:text-blue-600 transition text-2xl mr-2 block lg:hidden"
+            onClick={onMenuClick}
+            title="Open menu"
+          >
+            <FiMenu />
+          </button>
+        )}
+      </div>
       <div className="flex items-center gap-6">
         <button className="text-gray-500 hover:text-blue-600 transition text-xl" title="Notifications">
           <FiBell />
