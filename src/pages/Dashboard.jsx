@@ -53,6 +53,7 @@ const Dashboard = () => {
   const [memberSearch, setMemberSearch] = useState("");
   const [newMember, setNewMember] = useState("");
   const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Filtered clubs
   const filteredClubs = clubs.filter(club =>
@@ -127,10 +128,10 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-[#F0F7F7]">
-      <Sidebar />
-      <div className="flex-1">
-        <Topbar className="ml-64" />
-        <main className="p-8 ml-64">
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      <div className="flex-1 flex flex-col"> {/* Added flex flex-col here */}
+        <Topbar onMenuClick={() => setIsSidebarOpen(true)} className="lg:ml-56" />
+        <main className="p-8 lg:ml-56 flex-1 overflow-y-auto"> {/* Added flex-1 and overflow-y-auto */}
           <DashboardStats stats={stats} />
           {/* Header */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-10 gap-4">
